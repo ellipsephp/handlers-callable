@@ -1,6 +1,6 @@
 # Request handler callable
 
-[Psr-15](https://www.php-fig.org/psr/psr-15/) request handler proxying a callable.
+This package provides a [Psr-15](https://www.php-fig.org/psr/psr-15/) request handler proxying a callable.
 
 **Require** php >= 7.0
 
@@ -8,13 +8,13 @@
 
 **Run tests** `./vendor/bin/kahlan`
 
-- [Using callables as request handlers](https://github.com/ellipsephp/handlers-callable#using-callables-as-request-handlers)
+- [Using callables as request handlers](#using-callables-as-request-handlers)
 
 ## Using callables as request handlers
 
-The class ```Ellipse\Handlers\CallableRequestHandler``` can be wrapped around a callable in order to use it as a request handler.
+The class `Ellipse\Handlers\CallableRequestHandler` can be wrapped around a callable in order to use it as a request handler.
 
-As any request handler ```->handle()``` method, the callable takes an implementation of `Psr\Http\Message\ServerRequestInterface` as parameter and should return an implementation of `Psr\Http\Message\ResponseInterface`.
+As any request handler `->handle()` method, the callable takes an implementation of `Psr\Http\Message\ServerRequestInterface` as parameter and should return an implementation of `Psr\Http\Message\ResponseInterface`.
 
 ```php
 <?php
@@ -25,7 +25,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 use Ellipse\Handlers\CallableRequestHandler;
 
-// This middleware is wrapped around the given callable.
+// This request handler is wrapped around the given callable.
 $handler = new CallableRequestHandler(function (ServerRequestInterface $request) {
 
     // ...
